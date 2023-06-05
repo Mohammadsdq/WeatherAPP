@@ -20,6 +20,7 @@ Input:
 ## Installation ##
 redy to use
 ```
+If you live in Iran, open with vpn
 <3  :))
 ```
 
