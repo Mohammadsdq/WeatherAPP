@@ -9,22 +9,6 @@ const apiKey = "edc228562ac0a8aa3116d41c0687cf56";
 
 // Global
 let cityName;
-let sunSet;
-let sunRise;
-let ySunSet;
-let ySunRise;
-
-fetch(`https://api.sunrise-sunset.org/json?&city=${input.value}&date=today`)
-    .then(response => response.json())
-    .then(data => {
-        const { results } = data;
-        sunSet = results.sunset;
-        sunRise = results.sunrise;
-    })
-    .catch(() => {
-        sunSet = "nout found";
-        sunRise = "nout found";
-    });
 
 function creatYourCity() {
     fetch("https://api.ipgeolocation.io/ipgeo?apiKey=9dd1ce777c9a450992f9a05a8811a127")
@@ -39,6 +23,14 @@ function creatYourCity() {
                 .then(data => {
                     console.log(data);
                     const { main, name, sys, weather } = data;
+                    // start change ss sr time
+                    let srTime = sys.sunrise;
+                    srTime = new Date(srTime)
+                    srTime = `${srTime.getHours()}:${srTime.getMinutes()}`;
+                    let ssTime = sys.sunset;
+                    ssTime = new Date(ssTime)
+                    ssTime = `${ssTime.getHours()}:${ssTime.getMinutes()}`;
+                    // end change ss sr time
                     const li = document.createElement("li")
                     const icon = `https://openweathermap.org/img/wn/${weather[0].icon}.png`
                     li.classList.add("city", `${weather[0].main}`);
@@ -48,8 +40,8 @@ function creatYourCity() {
                                         <span>${sys.country}</span> 
                                         <img class='country-flag' src='${country_flag}' style='width: 30px; display: inline;'>
                                         <br> 
-                                        <span>SR  ${sunRise}</span> <br>
-                                        <span>SS  ${sunSet}</span>
+                                        <span>SR  ${srTime}</span> <br>
+                                        <span>SS  ${ssTime}</span>
                                     </h2>
                                     <div class='city-temp'>${Math.round(main.temp)}<sup>°C</sup></div>
                                     <figure>
@@ -65,17 +57,6 @@ function creatYourCity() {
         })
 };
 
-fetch(`https://api.sunrise-sunset.org/json?&city=${cityName}&date=today`)
-    .then(response => response.json())
-    .then(data => {
-        const { results } = data;
-        ySunSet = results.sunset;
-        ySunRise = results.sunrise;
-    })
-    .catch(() => {
-        ySunSet = "nout found";
-        ySunRise = "nout found";
-    });
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -86,6 +67,14 @@ form.addEventListener("submit", (e) => {
         .then(data => {
             console.log(data);
             const { main, name, sys, weather } = data;
+            // start change ss sr time
+            let srTime = sys.sunrise;
+            srTime = new Date(srTime)
+            srTime = `${srTime.getHours()}:${srTime.getMinutes()}`;
+            let ssTime = sys.sunset;
+            ssTime = new Date(ssTime)
+            ssTime = `${ssTime.getHours()}:${ssTime.getMinutes()}`;
+            // end change ss sr time
             const li = document.createElement("li")
             const icon = `https://openweathermap.org/img/wn/${weather[0].icon}.png`
             li.classList.add("city", `${weather[0].main}`);
@@ -93,8 +82,8 @@ form.addEventListener("submit", (e) => {
                         <h2 class='city-name' data-name=${name},${sys.country}>
                             <span>${name}</span>
                             <span>${sys.country}</span> <br> 
-                            <span>SR  ${sunRise}</span> <br>
-                            <span>SS  ${sunSet}</span>
+                            <span>SR  ${srTime}</span> <br>
+                            <span>SS  ${ssTime}</span>
                         </h2>
                         <div class='city-temp'>${Math.round(main.temp)}<sup>°C</sup></div>
                         <figure>
