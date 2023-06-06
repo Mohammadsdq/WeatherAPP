@@ -10,7 +10,9 @@ Input:
 
 
 ## Online preview ##
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b9e0b039-dfb9-4e0b-8f4c-df91cce385f7/deploy-status)](https://app.netlify.com/sites/kt-weather/deploys)
+[![KT]
+(https://api.netlify.com/api/v1/badges/b9e0b039-dfb9-4e0b-8f4c-df91cce385f7/deploy-status)](https://app.netlify.com/sites/kt-weather/deploys)
+
 https://kt-weather.netlify.app/
 
 
