@@ -27,11 +27,11 @@ fetch(`https://api.sunrise-sunset.org/json?&city=${input.value}&date=today`)
     });
 
 function creatYourCity() {
-    fetch("https://ipapi.co/json")
+    fetch("https://api.ipgeolocation.io/ipgeo?apiKey=9dd1ce777c9a450992f9a05a8811a127")
         .then(response => response.json())
         .then(data => {
-            // console.log(data);
-            const { city } = data;
+            console.log(data);
+            const { city, country_flag } = data;
             cityName = city;
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
             fetch(url)
@@ -45,7 +45,9 @@ function creatYourCity() {
                     const markup = `
                                 <h2 class='city-name' data-name=${name},${sys.country}>
                                     <span>${name}</span>
-                                    <span>${sys.country}</span> <br> 
+                                    <span>${sys.country}</span> 
+                                    <img class='country-flag' src='${country_flag}'>
+                                    <br> 
                                     <span>SR  ${sunRise}</span> <br>
                                     <span>SS  ${sunSet}</span>
                                 </h2>
