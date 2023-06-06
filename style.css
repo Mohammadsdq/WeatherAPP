@@ -1,13 +1,21 @@
 /* RESET STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 :root {
+  /* global */
   --bg_main: #301958;
   --text_light: #fff;
-  --text_med: #546E7A;
+  --text_med: #4a5b63;
   --text_dark: #1e2432;
   --red: #A1887F;
   --darkred: #c3112d;
   --orange: #ff8c00;
+
+  /* for back round weather */
+  --Wind:#92a8d1;
+  --Snow:#ffffff;
+  --Rain:#6188a6;
+  --Clouds:#b9c9d8;
+  --Clear:#fdd450;
 }
 
 * {
@@ -20,6 +28,23 @@
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* for back round weather */
+.Wind {
+  background-color: var(--Wind) !important; 
+}
+.Snow {
+  background-color: var(--Snow) !important;
+}
+.Rain {
+  background-color: var(--Rain) !important;
+}
+.Clouds {
+  background-color: var(--Clouds) !important;
+}
+.Clear {
+  background-color: var(--Clear) !important;
 }
 
 button {
