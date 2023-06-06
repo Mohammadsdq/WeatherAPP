@@ -46,7 +46,7 @@ function creatYourCity() {
                                 <h2 class='city-name' data-name=${name},${sys.country}>
                                     <span>${name}</span>
                                     <span>${sys.country}</span> 
-                                    <img class='country-flag' src='${country_flag}'>
+                                    <img class='country-flag' src='${country_flag}' style='width: 30px; display: inline;'>
                                     <br> 
                                     <span>SR  ${sunRise}</span> <br>
                                     <span>SS  ${sunSet}</span>
