@@ -25,10 +25,10 @@ function creatYourCity() {
                     const { main, name, sys, weather } = data;
                     // start change ss sr time
                     let srTime = sys.sunrise;
-                    srTime = new Date(srTime)
+                    srTime = new Date(srTime);
                     srTime = `${srTime.getHours()}:${srTime.getMinutes()}`;
                     let ssTime = sys.sunset;
-                    ssTime = new Date(ssTime)
+                    ssTime = new Date(ssTime);
                     ssTime = `${ssTime.getHours()}:${ssTime.getMinutes()}`;
                     // end change ss sr time
                     const li = document.createElement("li")
@@ -69,10 +69,10 @@ form.addEventListener("submit", (e) => {
             const { main, name, sys, weather } = data;
             // start change ss sr time
             let srTime = sys.sunrise;
-            srTime = new Date(srTime)
+            srTime = new Date(srTime);
             srTime = `${srTime.getHours()}:${srTime.getMinutes()}`;
             let ssTime = sys.sunset;
-            ssTime = new Date(ssTime)
+            ssTime = new Date(ssTime);
             ssTime = `${ssTime.getHours()}:${ssTime.getMinutes()}`;
             // end change ss sr time
             const li = document.createElement("li")
