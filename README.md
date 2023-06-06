@@ -9,7 +9,7 @@ Input:
 - `JS`
 
 
-## online preview ##
+## Online preview ##
 https://kt-weather.netlify.app/
 
 
