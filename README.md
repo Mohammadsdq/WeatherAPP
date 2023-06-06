@@ -9,6 +9,10 @@ Input:
 - `JS`
 
 
+## online preview ##
+https://kt-weather.netlify.app/
+
+
 ## Features ##
 - simple
 - esay
@@ -26,7 +30,8 @@ If you live in Iran, open with vpn
 
 
 ## Changelog ##
-#### Version 1.2 ####
+#### Version 1.2.1 ####
 - Initial release.
 - fixed.
 - add location
+- add flag
