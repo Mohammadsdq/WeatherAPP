@@ -40,22 +40,22 @@ function creatYourCity() {
                     console.log(data);
                     const { main, name, sys, weather } = data;
                     const li = document.createElement("li")
-                    li.classList.add("city");
                     const icon = `https://openweathermap.org/img/wn/${weather[0].icon}.png`
-                    const markup = `
-                                <h2 class='city-name' data-name=${name},${sys.country}>
-                                    <span>${name}</span>
-                                    <span>${sys.country}</span> 
-                                    <img class='country-flag' src='${country_flag}' style='width: 30px; display: inline;'>
-                                    <br> 
-                                    <span>SR  ${sunRise}</span> <br>
-                                    <span>SS  ${sunSet}</span>
-                                </h2>
-                                <div class='city-temp'>${Math.round(main.temp)}<sup>°C</sup></div>
-                                <figure>
-                                    <img class='city-icon' src='${icon}' alt ='city' >
-                                    <figurecaption>${weather[0]["description"]}</figurecaption>
-                                </figure>
+                    li.classList.add("city", `${weather[0].main}`);
+                    const markup = ` 
+                                    <h2 class='city-name' data-name=${name},${sys.country}>
+                                        <span>${name}</span>
+                                        <span>${sys.country}</span> 
+                                        <img class='country-flag' src='${country_flag}' style='width: 30px; display: inline;'>
+                                        <br> 
+                                        <span>SR  ${sunRise}</span> <br>
+                                        <span>SS  ${sunSet}</span>
+                                    </h2>
+                                    <div class='city-temp'>${Math.round(main.temp)}<sup>°C</sup></div>
+                                    <figure>
+                                        <img class='city-icon' src='${icon}' alt ='city' >
+                                        <figurecaption>${weather[0]["description"]}</figurecaption>
+                                    </figure>    
                             `;
                     li.innerHTML = markup;
                     list.appendChild(li);
@@ -87,8 +87,8 @@ form.addEventListener("submit", (e) => {
             console.log(data);
             const { main, name, sys, weather } = data;
             const li = document.createElement("li")
-            li.classList.add("city");
             const icon = `https://openweathermap.org/img/wn/${weather[0].icon}.png`
+            li.classList.add("city", `${weather[0].main}`);
             const markup = `
                         <h2 class='city-name' data-name=${name},${sys.country}>
                             <span>${name}</span>
